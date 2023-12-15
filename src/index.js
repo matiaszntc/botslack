@@ -7,9 +7,9 @@ const token = process.env.SLACK_TOKEN;
 const web = new WebClient(token);
 const conversationID = process.env.CONVERSATIONID;
 
-cron.schedule("46 11,15,19 * * 1,5", async () => {
+cron.schedule("0 11,15 * * 1,5", async () => {
   const result = await web.chat.postMessage({
-    text: "@here porfavor, revisar los servidores .52 - .56 - .59 - .100",
+    text: "<!here>, Hey ! please check the following server (.50 .52 .56 .100) for any agent that is running longer than it should be 😊👌🐱‍🚀",
     channel: conversationID,
   });
   console.log(
@@ -17,7 +17,3 @@ cron.schedule("46 11,15,19 * * 1,5", async () => {
   );
   console.log(result);
 });
-
-//28 11,18 * * *
-
-//0 11,15 * * 1,5
